@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OdontoCare — Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="page">
+    <div class="bg"></div>
+    <div class="overlay"></div>
+
+    <!-- Navbar -->
+    <nav>
+      <div class="brand">
+        <span class="brand-dot"></span>
+        OdontoCare
+      </div>
+      <div class="nav-actions">
+        <button class="btn-ghost" id="btnLogin"><span>Login</span></button>
+        <button class="btn-ghost" id="btnCadastro"><span>Cadastro</span></button>
+        <button class="btn-voice voice-toggle" id="btnVoiceToggle" aria-label="Ativar assistente de voz" aria-pressed="false">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/>
+          </svg>
+          Voz
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main -->
+    <main>
+      <!-- Status do assistente de voz -->
+      <div id="voiceStatus" class="voice-status" role="status" aria-live="polite" aria-atomic="true"></div>
+
+      <!-- LOGIN -->
+      <section id="loginSection" class="card active" aria-labelledby="tituloLogin">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0-1.657 1.343-3 3-3s3 1.343 3 3-1.343 3-3 3-3-1.343-3-3z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.343 17.657A8 8 0 1117.657 6.343 8 8 0 016.343 17.657z"/>
+            </svg>
+          </div>
+          <h1 class="card-title" id="tituloLogin">Entrar na Plataforma</h1>
+          <p class="card-subtitle">Acesse sua conta odontológica</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <form id="loginForm" novalidate>
+          <div class="field">
+            <label for="loginEmail">E-mail</label>
+            <div class="input-wrap">
+              <input type="email" id="loginEmail" placeholder="Digite seu e-mail" required autocomplete="email" aria-required="true" aria-describedby="loginEmail-msg" />
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <span id="loginEmail-msg" class="campo-msg" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="field">
+            <label for="loginSenha">Senha</label>
+            <div class="input-wrap">
+              <input type="password" id="loginSenha" placeholder="Digite sua senha" required autocomplete="current-password" aria-required="true" aria-describedby="loginSenha-msg" />
+              <button type="button" class="password-toggle" aria-label="Mostrar senha">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path class="eye-open" d="M1 12C3.5 5.5 9 2 12 2s8.5 3.5 11 10c-2.5 6.5-8 10-11 10S3.5 18.5 1 12z" />
+                  <circle class="eye-open" cx="12" cy="12" r="3" />
+                  <path class="eye-closed" d="M4 4l16 16" />
+                </svg>
+              </button>
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+            </div>
+            <span id="loginSenha-msg" class="campo-msg" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="forgot-row">
+            <a href="#">Esqueceu a senha?</a>
+          </div>
+
+          <button type="submit" class="btn-submit">Entrar</button>
+        </form>
+
+        <p class="register-link">
+          Não tem conta? <a href="#" id="btnCadastroLink">Cadastre-se</a>
+        </p>
+      </section>
+
+      <!-- CADASTRO -->
+      <section id="cadastroSection" class="card" aria-labelledby="tituloCadastro">
+        <div class="card-header">
+          <div class="card-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+              <circle cx="8.5" cy="7" r="4"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20 8v6M23 11h-6"/>
+            </svg>
+          </div>
+          <h1 class="card-title" id="tituloCadastro">Criar Conta</h1>
+          <p class="card-subtitle">Cadastre-se na plataforma odontológica</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <form id="cadastroForm" novalidate>
+          <div class="field">
+            <label for="nome">Nome Completo</label>
+            <div class="input-wrap">
+              <input type="text" id="nome" placeholder="Digite seu nome" required autocomplete="name" aria-required="true" aria-describedby="nome-msg" />
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                <circle cx="8.5" cy="7" r="4"/>
+              </svg>
+            </div>
+            <span id="nome-msg" class="campo-msg" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="field">
+            <label for="emailCadastro">E-mail</label>
+            <div class="input-wrap">
+              <input type="email" id="emailCadastro" placeholder="Digite seu e-mail" required autocomplete="email" aria-required="true" aria-describedby="emailCadastro-msg" />
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <span id="emailCadastro-msg" class="campo-msg" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="field">
+            <label for="telefone">Telefone</label>
+            <div class="input-wrap">
+              <input type="tel" id="telefone" placeholder="(00) 00000-0000" required autocomplete="tel" aria-required="true" aria-describedby="telefone-msg" />
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+            </div>
+            <span id="telefone-msg" class="campo-msg" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="field">
+            <label for="senhaCadastro">Senha</label>
+            <div class="input-wrap">
+              <input type="password" id="senhaCadastro" placeholder="Crie uma senha" required aria-required="true" aria-describedby="senhaCadastro-msg" />
+              <button type="button" class="password-toggle" aria-label="Mostrar senha">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path class="eye-open" d="M1 12C3.5 5.5 9 2 12 2s8.5 3.5 11 10c-2.5 6.5-8 10-11 10S3.5 18.5 1 12z" />
+                  <circle class="eye-open" cx="12" cy="12" r="3" />
+                  <path class="eye-closed" d="M4 4l16 16" />
+                </svg>
+              </button>
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+            </div>
+            <span id="senhaCadastro-msg" class="campo-msg" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="field">
+            <label for="confirmarSenha">Confirmar Senha</label>
+            <div class="input-wrap">
+              <input type="password" id="confirmarSenha" placeholder="Confirme sua senha" required aria-required="true" aria-describedby="confirmarSenha-msg" />
+              <button type="button" class="password-toggle" aria-label="Mostrar senha">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path class="eye-open" d="M1 12C3.5 5.5 9 2 12 2s8.5 3.5 11 10c-2.5 6.5-8 10-11 10S3.5 18.5 1 12z" />
+                  <circle class="eye-open" cx="12" cy="12" r="3" />
+                  <path class="eye-closed" d="M4 4l16 16" />
+                </svg>
+              </button>
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <span id="confirmarSenha-msg" class="campo-msg" role="alert" aria-live="polite"></span>
+          </div>
+
+          <button type="submit" class="btn-submit">Cadastrar</button>
+        </form>
+
+        <p class="register-link">
+          Já tem conta? <a href="#" id="btnLoginLink">Faça login</a>
+        </p>
+      </section>
+
+      <!-- Feedback global -->
+      <div id="feedbackGlobal" class="feedback-global" role="alert" aria-live="assertive" aria-atomic="true"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer>Sistema odontológico acessível &copy; 2026</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
